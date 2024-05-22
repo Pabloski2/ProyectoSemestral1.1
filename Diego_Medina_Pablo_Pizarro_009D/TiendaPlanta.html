@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="TiendaPlanta.html">
+        <i class="bi bi-flower1 text-success"></i>
+        <span class="text-warning">Jardín Solidario</span>
+      </a>
+          
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="TiendaPlanta.html">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Productos
+            </a>
+            <ul class="dropdown-menu bg-success" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Herramientas de Jardin</a></li>
+              <li><a class="dropdown-item" href="#">Semillas</a><li>
+              <li><a class="dropdown-item" href="#">Macetas</a><li>
+              <li><a class="dropdown-item" href="#">Accesorios</a><li>
+            </ul>
+            <li class="nav-item">
+              <a class="nav-link text-success" aria-current="page" href="sobreNosotros.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" aria-current="page" href="consultas_o_reclamos.html">¿Tienes un problema?</a>
+            </li>
+          </li>
+        </ul>
+        <hr class="d-md-none text-white-50">
+        <ul class="navbar-nav  flex-row flex-wrap text-light">
+        <li class="nav-item col-6 col-md-auto p-3">
+              <a href=""><i class="bi bi-twitter"></i></a>
+              <small class="d-md-none ms-2">Twitter</small>  
+          </li>
+
+          <li class="nav-item col-6 col-md-auto p-3">
+            <a href=""><i class="bi bi-whatsapp"></i></a>
+            <small class="d-md-none ms-2">WhatsApp</small>
+          </li>
+
+          <li class="nav-item col-6 col-md-auto p-3">
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <small class="d-md-none ms-2">Facebook</small>
+          </li>
+
+          <li class="nav-item col-6 col-md-auto p-3">
+            <a href="Carrito.html"><i class="bi bi-cart"></i></a>
+            <small class="d-md-none ms-2">Carrito</small> 
+          </li>
+        </ul>
+        
+        <form class="d-flex">
+          <a href="CreatuCuenta.html" class="btn btn-outline-success ms-3 d-none d-md-inline-block">Crea tu cuenta</a>
+        </form>
+        <form class="d-flex">
+          <a href="InicioDeSesion.html" class="btn btn-outline-success ms-3 d-none d-md-inline-block">Ingresa</a>
+      </form>
+        
+        
+      </div>
+      </div>  
+</nav>
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active d-item">
+        
+        <img src="imagenes/imagen carrusel3.jpg" class="d-block w-100 d-img" alt="slider 1">
+
+      </div>
+      <div class="carousel-item active d-item">
+        
+        <img src="imagenes/imagen carrusel2.jpg" class="d-block w-100 d-img" alt="slider 2">
+        
+      </div>
+      <div class="carousel-item active d-item">
+        
+        <img src="imagenes/imagen carrusel1.jpg" class="d-block w-100 d-img" alt="slider 3">
+        
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+<div class="container TusPreferidos mt-5">
+  <div class="row">
+      <div class="col-12 text-center">
+          <h2>Productos Destacados <span class="badge text-bg-secondary"></span></h2>
+          <hr class="w-5 bg-secondary mx-auto">
+      </div>
+  </div>
+</div>
+
+
+
+<div class="container ">
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+              <div class="card h-80">
+                <img src="imagenes/Destacado1.jpg" class="card-img-top d-img" alt="...">
+                <div class="card-body">
+                  <p class="card-title">Kit de tijerón para césped + tijera para jardín natural</p>
+                  <h4 class="card-title">$13.990</h4>
+                  <br>
+                  <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-80">
+                <img src="imagenes/Destacado2.jpg" class="card-img-top d-img" alt="...">
+                <div class="card-body">
+                    <p class="card-title">Tijera bypass para jardín de metal rojo</p>
+                    <h4 class="card-title">$10.990</h4>
+                    <br>
+                    <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-80">
+                <img src="imagenes/Destacado3.jpg" class="card-img-top d-img" alt="...">
+                <div class="card-body">
+                    <p class="card-title">Herramientas De Jardinería Jardín Azada De Doble Propósito</p>
+                    <h4 class="card-title">$3.500</h4>
+                    <br>
+                    <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="imagenes/Destacado4.jpg" class="card-img-top d-img" alt="...">
+                <div class="card-body">
+                  <p class="card-title">Semillas de Cactus Variado</p>
+                  <h4 class="card-title">$990</h4>
+                  <br>
+                  <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+                </div>
+              </div>
+          </div>
+    </div>
+</div>
+
+<div class="container TusPreferidos mt-5">
+  <div class="row">
+      <div class="col-12 text-center">
+          <h2>Semillas <span class="badge text-bg-secondary"></span></h2>
+          <hr class="w-5 bg-secondary mx-auto">
+      </div>
+  </div>
+</div>
+
+<div class="container ">
+  <div class="row">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card h-80">
+              <img src="imagenes/Cilantro.webp" class="card-img-top d-img" alt="...">
+              <div class="card-body">
+                <p class="card-title">Semillas de Cilantro Cultivado</p>
+                <h4 class="card-title">$990</h4>
+                <br>
+                <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="imagenes/Cebollin-Huertos-Alma-Chile.webp" class="card-img-top d-img " alt="...">
+              <div class="card-body">
+                  <p class="card-title">Semillas de Cebollín Kyoto</p>
+                  <h4 class="card-title">$990</h4>
+                  <br>
+                  <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <a href=""><img src="imagenes/Orégano.webp" class="card-img-top d-img" alt="..."></a>
+              <div class="card-body">
+                  <p class="card-title">Semillas de Orégano</p>
+                  <h4 class="card-title">$990</h4>
+                  <br>
+                  <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="imagenes/tmp6439-1024x1024-1.webp" class="card-img-top d-img" alt="...">
+              <div class="card-body">
+                <p class="card-title">Semillas de Manzanilla</p>
+                <h4 class="card-title">$990</h4>
+                <br>
+                <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+<div class="container TusPreferidos mt-5">
+  <div class="row">
+      <div class="col-12 text-center">
+          <h2>Maceteros <span class="badge text-bg-secondary"></span></h2>
+          <hr class="w-5 bg-secondary mx-auto">
+      </div>
+  </div>
+</div>
+
+<div class="container ">
+  <div class="row">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card h-800">
+              <img src="imagenes/Macetero1.jpg" class="card-img-top d-img" alt="...">
+              <div class="card-body">
+                <p class="card-title">Macetero rústico de arcilla terracota</p>
+                <h4 class="card-title">$12.990</h4>
+                <br>
+                <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-80">
+              <img src="imagenes/Macetero2.jpg" class="card-img-top d-img" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">Macetero de cerámica</h5>
+                  <h4 class="card-title">$6.990</h4>
+                  <br>
+                  <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+                </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-80">
+              <a href=""><img src="imagenes/Macetero3.jpg" class="card-img-top d-img" alt="..."></a>
+              <div class="card-body">
+                  <p class="card-title">Macetero trapezio color arena</p>
+                  <h4 class="card-title">$16.900</h4>
+                  <br>
+                  <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-80">
+              <img src="imagenes/Macetero4.jpg" class="card-img-top d-img" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Macetero de plástico</h5>
+                <h4 class="card-title">$2.390</h4>
+                <br>
+                <p class="card-text text-center "><a href="#" class="btn btn-success">Agregar al Carrito</a></p>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

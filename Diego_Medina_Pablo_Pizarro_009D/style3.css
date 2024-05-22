@@ -1,0 +1,25 @@
+h1 {text-align: center;
+    margin-left: 750px;
+    margin-right: 750px;
+    background-color: green;
+    border-radius: 20px;
+}
+
+p {
+    color: white;
+    margin-left: 250px;
+    margin-right: 250px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: green;
+    border-radius: 20px;
+}
+
+.carousel-item {
+    height: 400px;
+}
+
+img {
+    width: 70px;
+    height: 400px;
+}
+

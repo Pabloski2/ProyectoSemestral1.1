@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="funciones.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-image" style="background-image:url('imagenes/fotoInicio.jpeg')">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="TiendaPlanta.html">
+            <i class="bi bi-flower1 text-success"></i>
+            <span class="text-warning">Jardín Solidario</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-success" aria-current="page" href="TiendaPlanta.html">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-success" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Productos
+                    </a>
+                    <ul class="dropdown-menu bg-success" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Herramientas de Jardín</a></li>
+                        <li><a class="dropdown-item" href="#">Semillas</a></li>
+                        <li><a class="dropdown-item" href="#">Macetas</a></li>
+                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success" aria-current="page" href="#">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success" aria-current="page" href="consultas_o_reclamos.html">¿Tienes un problema?</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav flex-row flex-wrap text-light">
+                <li class="nav-item col-6 col-md-auto p-3">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <small class="d-md-none ms-2">Twitter</small>  
+                </li>
+                <li class="nav-item col-6 col-md-auto p-3">
+                    <a href=""><i class="bi bi-whatsapp"></i></a>
+                    <small class="d-md-none ms-2">WhatsApp</small>
+                </li>
+                <li class="nav-item col-6 col-md-auto p-3">
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <small class="d-md-none ms-2">Facebook</small>
+                </li>
+                <li class="nav-item col-6 col-md-auto p-3">
+                    <a href="Carrito.html"><i class="bi bi-cart"></i></a>
+                    <small class="d-md-none ms-2">Carrito</small> 
+                </li>
+            </ul>
+            <a href="CreatuCuenta.html" class="btn btn-outline-success ms-3 d-none d-md-inline-block">Crea tu cuenta</a>
+            <a href="InicioDeSesion.html" class="btn btn-outline-success ms-3 d-none d-md-inline-block active">Ingresa</a>
+        </div>
+    </div>  
+</nav>
+
+
+
+<div class="container-fluid p-0">
+    <div class="row justify-content-center align-items-center" style="height: 100vh;">
+        <div class="col-md-6">
+            <div class="card" style="border-radius: 1rem;">
+                <div class="card-body p-4 p-lg-5 text-black">
+                    <form>
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicio sesión en tu cuenta</h5>
+                        <div class="form-outline mb-4">
+                            <input type="email" id="email" class="form-control form-control-lg" />
+                            <label class="form-label" for="email">Correo Electrónico</label>
+                            <div id="mensajeE" class="errores"> Ingresa un mail valido </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="password" id="password" class="form-control form-control-lg" />
+                            <label class="form-label" for="password">Contraseña</label>
+                            <div id="mensajeC" class="errores"> Ingresa tu contraseña </div>
+                        </div>
+                        <div class="pt-1 mb-4">
+                            <button class="btn btn-dark btn-lg btn-block" id="Iniciar" type="button">Iniciar</button>
+                        </div>
+                        <a class="small text-muted" href="#!">¿Olvidaste tu contraseña?</a>
+                        <p class="mb-5 pb-lg-2">¿No tienes una cuenta? <a href="CreatuCuenta.html">Regístrate aquí</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
