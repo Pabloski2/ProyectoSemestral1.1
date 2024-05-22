@@ -1,46 +1,60 @@
 $(document).ready(function() {
-    $("#Iniciar").click(function() {
-        const email = $("#email").val();
-        const password = $("#password").val();
+      $("#Iniciar").click(function() {
+ 
+          var email = $("#email").val();
+          if (email == "") {
+              $("#mensajeE").text("Por favor ingresa tu correo electrónico");
+              return;
+          } else {
+              $("#mensajeE").text("");
+          }
+  
+          var password = $("#password").val();
+          if (password == "") {
+              $("#mensajeC").text("Por favor ingresa tu contraseña");
+              return;
+          } else {
+              $("#mensajeC").text("");
+          }
+  
+          $("#mensajeExito").fadeIn();
+  
+          
+      });
+  });
+       $(document).ready(function() {
+        $("#consultaForm").submit(function(event) {
+            var name = $("#name").val();
+            var phone = $("#phone").val();
+            var email = $("#email").val();
+            var message = $("#message").val();
+            var valid = true;
 
-        if (!email) {
-            $("#mensajeE").text("Por favor ingresa tu correo electrónico");
-            return;
-        } else {
-            $("#mensajeE").text("");
-        }
+            $(".errores").hide();
 
-        if (!password) {
-            $("#mensajeC").text("Por favor ingresa tu contraseña");
-            return;
-        } else {
-            $("#mensajeC").text("");
-        }
-    });
-    $("#consultaForm").submit(function(event) {
-        const name = $("#name").val();
-        const phone = $("#phone").val();
-        const email = $("#email").val();
-        const message = $("#message").val();
-        let valid = true;
+            if (name === "") {
+                $("#mensaje1").show();
+                valid = false;
+            }
+            if (phone === "") {
+                $("#mensaje2").show();
+                valid = false;
+            }
+            if (email === "" || !validateEmail(email)) {
+                $("#mensaje3").show();
+                valid = false;
+            }
 
-        $(".errores").hide();
+            if (!valid) {
+                event.preventDefault();
+            } else {
+                $("#successMessage").removeClass("d-none");
+            }
+        });
 
-        if (!name) {
-            $("#mensaje1").show();
-            valid = false;
-        }
-        if (!phone) {
-            $("#mensaje2").show();
-            valid = false;
-        }
-        if (!email || !validateEmail(email)) {
-            $("#mensaje3").show();
-            valid = false;
-        }
-
-        if (!valid) {
-            event.preventDefault();
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
         }
     });
     $("#registerForm").submit(function(event) {
