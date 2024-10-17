@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Cambiar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-container" style="margin-left: auto; margin-right: auto; width: 300px; background-color: #5a7c99; padding: 20px; border-radius: 8px;">
+    <h2 style="text-align: center;">Cambiar Contraseña</h2>
+    
+    <ion-item>
+      <ion-label position="floating">Nueva Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="nuevaContrasena" required></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Confirmar Nueva Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="confirmarContrasena" required></ion-input>
+    </ion-item>
+    
+    <ion-button 
+      expand="full" 
+      [disabled]="!nuevaContrasena || !confirmarContrasena || nuevaContrasena !== confirmarContrasena || !validarContrasena(nuevaContrasena)" 
+      (click)="cambiarContrasena()">
+      Cambiar Contraseña
+    </ion-button>
+    
+    <p *ngIf="nuevaContrasena && nuevaContrasena.length < 8" style="color: red; text-align: center;">
+      La contraseña debe tener al menos 8 caracteres.
+    </p>
+    
+    <p *ngIf="nuevaContrasena && confirmarContrasena && nuevaContrasena !== confirmarContrasena" style="color: red; text-align: center;">
+      Las contraseñas no coinciden.
+    </p>
+    
+  </div>
+</ion-content>
