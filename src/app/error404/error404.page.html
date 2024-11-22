@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>error404</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="error-container">
+    <div class="error-number">404</div>
+    <h2 class="error-text">¡Página no encontrada!</h2>
+    <p class="error-description">Lo sentimos, la página que buscas no existe o ha sido movida.</p>
+    
+    <ion-button (click)="irAPaginaPrincipal()" expand="block">
+      <ion-icon name="home" slot="start"></ion-icon>
+      Volver al inicio
+    </ion-button>
+  </div>
+</ion-content>

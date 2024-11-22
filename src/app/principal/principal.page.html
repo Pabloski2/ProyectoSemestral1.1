@@ -1,24 +1,65 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title >
-      Página Principal
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Página Principal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleSearchBar()">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openClassesModal()">
+        <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar *ngIf="showSearchBar" color="light">
+    <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar..."></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <ion-card>
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>¡Bienvenido!</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
     <ion-card-header>
-      <ion-card-title >¡Bienvenido a la Aplicación!</ion-card-title>
+      <ion-card-title>Información del Dispositivo</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Esta es la página principal de tu aplicación. Haz clic en el botón de abajo para ver la notificación de bienvenida.
+      <p>Nivel de batería: {{ batteryLevel }}%</p>
     </ion-card-content>
   </ion-card>
 
-  <ion-button expand="full" color="primary" (click)="mostrarBienvenida()">
-    Mostrar Bienvenida
-  </ion-button>
-  <br>
-  <ion-button  color="primary" >Codigo QR</ion-button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del Clima</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Temperatura: {{ weatherInfo.temperature }}°C</p>
+      <p>Descripción: {{ weatherInfo.description }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Asignaturas</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let asignatura of asignaturas">
+      <ion-label>{{ asignatura.nombre }}</ion-label>
+      <ion-button slot="end" (click)="startScan(asignatura.nombre)">
+        <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div class="card" *ngIf="qrData">
+    <div class="card-border-top"></div>
+    <div class="img"></div>
+    <span>{{ username }}</span>
+    <p class="job">Asistencias: {{ attendanceCount }} de {{ totalAttendance }}</p>
+  </div>
 </ion-content>
+
+

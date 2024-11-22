@@ -9,6 +9,16 @@
     <h2 style="text-align: center;">Cambiar Contraseña</h2>
     
     <ion-item>
+      <ion-label position="floating">RUT</ion-label>
+      <ion-input type="text" [(ngModel)]="rut" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre" required></ion-input>
+    </ion-item>
+    
+    <ion-item>
       <ion-label position="floating">Nueva Contraseña</ion-label>
       <ion-input type="password" [(ngModel)]="nuevaContrasena" required></ion-input>
     </ion-item>
@@ -20,7 +30,7 @@
     
     <ion-button 
       expand="full" 
-      [disabled]="!nuevaContrasena || !confirmarContrasena || nuevaContrasena !== confirmarContrasena || !validarContrasena(nuevaContrasena)" 
+      [disabled]="!rut || !nombre || !nuevaContrasena || !confirmarContrasena || nuevaContrasena !== confirmarContrasena || !validarContrasena(nuevaContrasena)" 
       (click)="cambiarContrasena()">
       Cambiar Contraseña
     </ion-button>

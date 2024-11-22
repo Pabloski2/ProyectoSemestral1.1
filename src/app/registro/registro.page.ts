@@ -1,21 +1,58 @@
-import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { NavController, ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
 })
-export class RegistroPage {
-  constructor(private navCtrl: NavController) {
-    console.log('RegistroPage cargado'); // Para verificar si se carga el componente
+export class RegistroPage implements OnInit {
+  nombre: string = '';
+  apellido: string = '';
+  rut: string = '';
+  password: string = '';
+
+  constructor(
+    private navCtrl: NavController,
+    private storage: Storage,
+    private toastController: ToastController
+  ) {
+    this.initStorage();
   }
 
-  registrar() {
-    console.log('Registrar usuario'); // Mensaje para confirmar el clic
+  async ngOnInit() {
+    await this.storage.remove('canAccessRegistro');
+  }
 
-    // Redirigir a la página de inicio después del registro
-    this.navCtrl.navigateForward('/home');
+  async initStorage() {
+    await this.storage.create();
+  }
+
+  async registrar() {
+    console.log('Valores actuales:', { nombre: this.nombre, apellido: this.apellido, rut: this.rut, password: this.password });
+    
+    if (this.nombre && this.apellido && this.rut && this.password) {
+      const usuario = { 
+        nombre: this.nombre, 
+        apellido: this.apellido, 
+        rut: this.rut, 
+        password: this.password 
+      };
+      await this.storage.set(this.rut, JSON.stringify(usuario));
+      this.mostrarMensaje('Registro exitoso. Ahora puedes iniciar sesión.');
+      this.navCtrl.navigateForward('/home');
+    } else {
+      this.mostrarMensaje('Por favor, completa todos los campos.');
+    }
+  }
+
+  async mostrarMensaje(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      position: 'top'
+    });
+    toast.present();
   }
 }
-
