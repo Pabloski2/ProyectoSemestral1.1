@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Página Principal</ion-title>
+    <ion-title>Bienvenido</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="toggleSearchBar()">
         <ion-icon slot="icon-only" name="search-outline"></ion-icon>
@@ -16,50 +16,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-card>
-    <ion-card-header class="ion-text-center">
-      <ion-card-title>¡Bienvenido!</ion-card-title>
-    </ion-card-header>
-  </ion-card>
+<ion-content>
+  <div class="floating-container">
+    
+    <div class="floating-card">
+      <div class="card-header"></div>
+      <div class="img"></div>
+      <span>Información del Dispositivo</span>
+      <p class="job">Nivel de batería: {{ batteryLevel }}%</p>
+    </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información del Dispositivo</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Nivel de batería: {{ batteryLevel }}%</p>
-    </ion-card-content>
-  </ion-card>
+    <div class="floating-card">
+      <div class="card-header"></div>
+      <div class="img"></div>
+      <span>Información del Clima</span>
+      <p class="job">Temperatura: {{ weatherInfo.temperature }}°C</p>
+      <p class="job">Descripción: {{ weatherInfo.description }}</p>
+    </div>
+  </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información del Clima</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Temperatura: {{ weatherInfo.temperature }}°C</p>
-      <p>Descripción: {{ weatherInfo.description }}</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-list>
-    <ion-list-header>
-      <ion-label>Asignaturas</ion-label>
-    </ion-list-header>
-    <ion-item *ngFor="let asignatura of asignaturas">
-      <ion-label>{{ asignatura.nombre }}</ion-label>
-      <ion-button slot="end" (click)="startScan(asignatura.nombre)">
-        <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-
-  <div class="card" *ngIf="qrData">
-    <div class="card-border-top"></div>
-    <div class="img"></div>
-    <span>{{ username }}</span>
-    <p class="job">Asistencias: {{ attendanceCount }} de {{ totalAttendance }}</p>
+  <!-- Nueva sección para asignaturas -->
+  <div class="assignment-container">
+    <div class="assignment-card" *ngFor="let asignatura of asignaturas">
+      <h3>{{ asignatura.nombre }}</h3>
+      <button (click)="startScan(asignatura.nombre)">
+        Escanear QR
+      </button>
+    </div>
   </div>
 </ion-content>
-
-

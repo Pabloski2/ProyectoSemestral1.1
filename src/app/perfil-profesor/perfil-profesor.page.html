@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil Profesor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <div *ngIf="nombre && apellido" class="profile-info">
+      <h2>Información del Profesor</h2>
+      
+      <ion-item lines="none">
+        <ion-label>Nombre</ion-label>
+        <ion-text>{{ nombre }}</ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Apellido</ion-label>
+        <ion-text>{{ apellido }}</ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>RUT</ion-label>
+        <ion-text>{{ rut }}</ion-text>
+      </ion-item>
+    </div>
+
+    <div class="profile-image">
+      <img src="assets/imgs/default-avatar.png" alt="Imagen del Profesor" />
+    </div>
+  </div>
+
+  <div *ngIf="!nombre || !apellido" class="error-message">
+    <ion-text color="danger">
+      <p>Profesor no encontrado.</p>
+    </ion-text>
+  </div>
+</ion-content>

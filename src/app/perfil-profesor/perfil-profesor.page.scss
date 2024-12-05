@@ -1,0 +1,66 @@
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Toda la altura de la pantalla */
+  background-color: #f4f4f9; /* Color de fondo más suave */
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.profile-info {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+ion-item {
+  margin-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+ion-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.profile-image {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.error-message {
+  text-align: center;
+  color: #ff4040;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+ion-text {
+  font-size: 1.1rem;
+  color: #333;
+}

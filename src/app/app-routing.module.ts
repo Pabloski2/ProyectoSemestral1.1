@@ -12,39 +12,44 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
+    loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule),
     canActivate: [RegistroGuard]
   },
   {
     path: 'principal',
-    loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./principal/principal.module').then(m => m.PrincipalPageModule),
+    
   },
   {
     path: 'cambiar-contrasena',
-    loadChildren: () => import('./cambiar-contrasena/cambiar-contrasena.module').then( m => m.CambiarContrasenaPageModule),
+    loadChildren: () => import('./cambiar-contrasena/cambiar-contrasena.module').then(m => m.CambiarContrasenaPageModule),
     canActivate: [CambiarContrasenaGuard]
   },
   {
+    path: 'perfil-profesor',
+    loadChildren: () => import('./perfil-profesor/perfil-profesor.module').then(m => m.PerfilProfesorPageModule),
+    
+  },
+  {
+    path: 'asignaturas',
+    loadChildren: () => import('./asignaturas/asignaturas.module').then(m => m.AsignaturasPageModule)
+  },
+  {
+    path: 'qr',
+    loadChildren: () => import('./qr/qr.module').then(m => m.QrPageModule)
+  },
+  {
     path: 'error404',
-    loadChildren: () => import('./error404/error404.module').then( m => m.Error404PageModule)
+    loadChildren: () => import('./error404/error404.module').then(m => m.Error404PageModule)
   },
   {
     path: '**',
     redirectTo: 'error404',
     pathMatch: 'full'
-  },
-  {
-    path: 'asignaturas',
-    loadChildren: () => import('./asignaturas/asignaturas.module').then( m => m.AsignaturasPageModule)
-  },
-  {
-    path: 'qr',
-    loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
   }
 ];
 

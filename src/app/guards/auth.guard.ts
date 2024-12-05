@@ -12,21 +12,24 @@ export class AuthGuard implements CanActivate {
   async canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean | UrlTree> {
-    
+  
     const isLoggedIn = await this.storage.get('isLoggedIn');
-    
-    if (route.routeConfig?.path === 'principal') {
-      // Si intenta acceder a home y está logueado, redirigir a principal
-      if (isLoggedIn) {
-        return this.router.parseUrl('/principal');
-      }
-      return true;
-    } else {
-      // Para otras rutas protegidas (como principal)
-      if (isLoggedIn) {
-        return true;
-      }
-      return this.router.parseUrl('/principal');
+    const userType = await this.storage.get('userType');
+  
+    // Si no está logueado, redirigir a home
+    if (!isLoggedIn) {
+      return this.router.parseUrl('/home');
     }
+  
+    // Verificar las rutas y redirigir si el tipo de usuario es incorrecto
+    if (route.routeConfig?.path === 'principal' && userType !== 'usuario') {
+      return this.router.parseUrl('/error404'); // O redirigir a donde desees
+    }
+  
+    if (route.routeConfig?.path === 'perfil-profesor' && userType !== 'profesor') {
+      return this.router.parseUrl('/error404'); // O redirigir a donde desees
+    }
+  
+    return true;
   }
-}
+}  

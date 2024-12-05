@@ -12,6 +12,7 @@ export class RegistroPage implements OnInit {
   apellido: string = '';
   rut: string = '';
   password: string = '';
+  userType: string = ''; // Tipo de usuario (Usuario o Profesor)
 
   constructor(
     private navCtrl: NavController,
@@ -30,14 +31,15 @@ export class RegistroPage implements OnInit {
   }
 
   async registrar() {
-    console.log('Valores actuales:', { nombre: this.nombre, apellido: this.apellido, rut: this.rut, password: this.password });
+    console.log('Valores actuales:', { nombre: this.nombre, apellido: this.apellido, rut: this.rut, password: this.password, userType: this.userType });
     
-    if (this.nombre && this.apellido && this.rut && this.password) {
+    if (this.nombre && this.apellido && this.rut && this.password && this.userType) {
       const usuario = { 
         nombre: this.nombre, 
         apellido: this.apellido, 
         rut: this.rut, 
-        password: this.password 
+        password: this.password,
+        tipo: this.userType  // Guardamos el tipo de usuario
       };
       await this.storage.set(this.rut, JSON.stringify(usuario));
       this.mostrarMensaje('Registro exitoso. Ahora puedes iniciar sesión.');
@@ -56,3 +58,4 @@ export class RegistroPage implements OnInit {
     toast.present();
   }
 }
+
